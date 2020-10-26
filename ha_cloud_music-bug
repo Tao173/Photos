@@ -1,0 +1,44 @@
+
+
+Logger: frontend.js.latest.202010012
+Source: components/system_log/__init__.py:193
+First occurred: 下午4:14:47 (1 occurrences)
+Last logged: 下午4:14:47
+http://192.168.241.128:8123/ha_cloud_music-web/data/card.js:583:22 TypeError: event.path is undefined 
+
+Logger: homeassistant.components.websocket_api.http.connection.140688084954752
+Source: core.py:1289
+Integration: Home Assistant WebSocket API (documentation, issues)
+First occurred: 下午4:14:52 (4 occurrences)
+Last logged: 下午4:15:05
+expected float for dictionary value @ data['seek_position']
+
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/websocket_api/commands.py", line 138, in handle_call_service
+    await hass.services.async_call(
+  File "/usr/src/homeassistant/homeassistant/core.py", line 1289, in async_call
+    processed_data = handler.schema(service_data)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 218, in __call__
+    return self._exec((Schema(val) for val in self.validators), v)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 340, in _exec
+    raise e if self.msg is None else AllInvalid(self.msg, path=path)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 336, in _exec
+    v = func(v)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/schema_builder.py", line 272, in __call__
+    return self._compiled([], data)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 215, in _run
+    return self._exec(self._compiled, value, path)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 340, in _exec
+    raise e if self.msg is None else AllInvalid(self.msg, path=path)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/validators.py", line 338, in _exec
+    v = func(path, v)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/schema_builder.py", line 817, in validate_callable
+    return schema(data)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/schema_builder.py", line 272, in __call__
+    return self._compiled([], data)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/schema_builder.py", line 594, in validate_dict
+    return base_validate(path, iteritems(data), out)
+  File "/usr/local/lib/python3.8/site-packages/voluptuous/schema_builder.py", line 432, in validate_mapping
+    raise er.MultipleInvalid(errors)
+voluptuous.error.MultipleInvalid: expected float for dictionary value @ data['seek_position']
+
